@@ -28,3 +28,6 @@ if [[ "$OSTYPE" == "msys" ]]; then
 fi
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Adiciona [usuário@máquina] antes do prompt do robbyrussell
+PROMPT='%n@%m %{$fg_bold[cyan]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}'
