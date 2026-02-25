@@ -18,11 +18,13 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Carregar arquivos modulares
-[[ -f ~/dotfiles/zsh/exports.zsh ]] && source ~/dotfiles/zsh/exports.zsh
-[[ -f ~/dotfiles/zsh/aliases.zsh ]] && source ~/dotfiles/zsh/aliases.zsh
-[[ -f ~/dotfiles/zsh/functions.zsh ]] && source ~/dotfiles/zsh/functions.zsh
+[[ -f ~/zsh/exports.zsh ]] && source ~/zsh/exports.zsh
+[[ -f ~/zsh/aliases.zsh ]] && source ~/zsh/aliases.zsh
+[[ -f ~/zsh/functions.zsh ]] && source ~/zsh/functions.zsh
 
 # Correção para Git Bash no Windows (evita lentidão em pastas de rede)
 if [[ "$OSTYPE" == "msys" ]]; then
     __git_ps1_show_upstream_config="auto"
 fi
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
