@@ -16,3 +16,6 @@ alias gl="git log --oneline --graph --decorate"
 # Utilitários
 alias cl="clear"
 alias reload="source ~/.zshrc"
+
+#kubernetes
+alias k="kubectll"

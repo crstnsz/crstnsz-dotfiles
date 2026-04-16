@@ -7,6 +7,7 @@ ZSH_THEME="robbyrussell"
 # Melhores Plugins (Equilíbrio entre poder e performance)
 # zsh-syntax-highlighting e zsh-autosuggestions devem ser instalados à parte
 plugins=(
+    dotnet
     git 
     docker 
     zsh-autosuggestions 
