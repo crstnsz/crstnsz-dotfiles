@@ -7,13 +7,13 @@ ZSH_THEME="robbyrussell"
 # Melhores Plugins (Equilíbrio entre poder e performance)
 # zsh-syntax-highlighting e zsh-autosuggestions devem ser instalados à parte
 plugins=(
-    dotnet
     git 
     docker 
     zsh-autosuggestions 
     zsh-syntax-highlighting 
     extract
     sudo
+    dotnet
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -28,7 +28,12 @@ if [[ "$OSTYPE" == "msys" ]]; then
     __git_ps1_show_upstream_config="auto"
 fi
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+if [ -x "/usr/bin/git" ]; then
+    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+elif [ -x "/mingw64/bin/git" ]; then
+    alias config='/mingw64/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+fi
+
 
 # Adiciona [usuário@máquina] antes do prompt do robbyrussell
 PROMPT='%n@%m %{$fg_bold[cyan]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}'
