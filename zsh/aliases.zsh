@@ -9,9 +9,10 @@ alias l="ls -CF"
 # Git (Os melhores)
 alias gs="git status"
 alias gaall="git add ."
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
+alias gpl="git pull"
 alias gl="git log --oneline --graph --decorate"
 
 # Utilitários
