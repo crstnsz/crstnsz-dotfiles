@@ -8,13 +8,17 @@ ZSH_THEME="robbyrussell"
 # zsh-syntax-highlighting e zsh-autosuggestions devem ser instalados à parte
 plugins=(
     git 
-    docker 
     zsh-autosuggestions 
     zsh-syntax-highlighting 
     extract
     sudo
     dotnet
 )
+
+# Verifica se o comando 'docker' existe no sistema
+if (( $+commands[docker] )); then
+    plugins+=(docker)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,3 +43,6 @@ fi
 PROMPT='%n@%m %{$fg_bold[cyan]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}'
 
 [ -f "/home/crstnsz/.ghcup/env" ] && . "/home/crstnsz/.ghcup/env" # ghcup-env
+
+# Added by Antigravity CLI installer
+export PATH="/home/crstnsz/.local/bin:$PATH"
