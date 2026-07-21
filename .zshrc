@@ -22,6 +22,10 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+if [ -f "$HOME/.env" ]; then
+    source "$HOME/.env"
+fi
+
 # Carregar arquivos modulares
 [[ -f ~/zsh/exports.zsh ]] && source ~/zsh/exports.zsh
 [[ -f ~/zsh/aliases.zsh ]] && source ~/zsh/aliases.zsh
