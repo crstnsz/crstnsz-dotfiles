@@ -1,0 +1,9 @@
+if [ -d "$HOME/.dotfiles" ]; then
+  for file in "$HOME/.dotfiles"/*.bash; do
+    # Ignora se o arquivo for o próprio arquivo
+    [ "$(basename "$file")" = "load.bash" ] && continue
+    
+    # Carrega o arquivo se ele tiver permissão de leitura
+    [ -r "$file" ] && source "$file"
+  done
+fi

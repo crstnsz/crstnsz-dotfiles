@@ -27,9 +27,11 @@ if [ -f "$HOME/.env" ]; then
 fi
 
 # Carregar arquivos modulares
-[[ -f ~/zsh/exports.zsh ]] && source ~/zsh/exports.zsh
-[[ -f ~/zsh/aliases.zsh ]] && source ~/zsh/aliases.zsh
-[[ -f ~/zsh/functions.zsh ]] && source ~/zsh/functions.zsh
+if [ -d "$HOME/.dotfiles" ]; then
+  for file in "$HOME/.dotfiles"/*.zsh; do
+    [ -r "$file" ] && source "$file"
+  done
+fi
 
 # Correção para Git Bash no Windows (evita lentidão em pastas de rede)
 if [[ "$OSTYPE" == "msys" ]]; then
