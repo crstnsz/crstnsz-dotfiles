@@ -23,7 +23,9 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 if [ -f "$HOME/.env" ]; then
+    set -a
     source "$HOME/.env"
+    set +a
 fi
 
 # Carregar arquivos modulares
@@ -31,6 +33,11 @@ if [ -d "$HOME/.dotfiles" ]; then
   for file in "$HOME/.dotfiles"/*.zsh; do
     [ -r "$file" ] && source "$file"
   done
+fi
+
+# Carregar configurações locais
+if [ -d "$HOME/.zsh.local" ]; then
+    source "$HOME/.zsh.local"
 fi
 
 # Correção para Git Bash no Windows (evita lentidão em pastas de rede)
@@ -49,6 +56,10 @@ fi
 PROMPT='%n@%m %{$fg_bold[cyan]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}'
 
 [ -f "/home/crstnsz/.ghcup/env" ] && . "/home/crstnsz/.ghcup/env" # ghcup-env
+
+if [[ -n "$DOTNET_INSTALL_DIR" ]]; then
+  PATH="$DOTNET_INSTALL_DIR/tools:$PATH"
+fi
 
 # Added by Antigravity CLI installer
 export PATH="/home/crstnsz/.local/bin:$PATH"
