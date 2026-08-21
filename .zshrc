@@ -57,8 +57,8 @@ PROMPT='%n@%m %{$fg_bold[cyan]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_
 
 [ -f "/home/crstnsz/.ghcup/env" ] && . "/home/crstnsz/.ghcup/env" # ghcup-env
 
-if [[ -n "$DOTNET_INSTALL_DIR" ]]; then
-  PATH="$DOTNET_INSTALL_DIR/tools:$PATH"
+if [[ -n "$DOTNET_TOOLS" ]]; then
+  PATH="$DOTNET_TOOLS:$PATH"
 fi
 
 # Added by Antigravity CLI installer
