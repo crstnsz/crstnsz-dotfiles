@@ -19,6 +19,7 @@ alias folder-size="du -sh * | sort -rh"
 # Utilitários
 alias cl="clear"
 alias reload="source ~/.zshrc"
+alias cf=set export CURRENT_FILE=
 
 #kubernetes
 alias k="kubectll"
