@@ -2,8 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Tema (O 'robbyrussell' é o mais rápido, mas 'agnoster' é visual)
-ZSH_THEME="robbyrussell"
-
+ZSH_THEME="strug"
 # Melhores Plugins (Equilíbrio entre poder e performance)
 # zsh-syntax-highlighting e zsh-autosuggestions devem ser instalados à parte
 plugins=(
