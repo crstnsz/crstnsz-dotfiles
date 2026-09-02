@@ -45,9 +45,9 @@ if [[ "$OSTYPE" == "msys" ]]; then
 fi
 
 if [ -x "/usr/bin/git" ]; then
-    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 elif [ -x "/mingw64/bin/git" ]; then
-    alias config='/mingw64/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+    alias config='/mingw64/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 fi
 
 
