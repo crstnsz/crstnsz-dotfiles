@@ -34,6 +34,8 @@ if [ -d "$HOME/.dotfiles" ]; then
   done
 fi
 
+fpath=(~/.dotfiles/functions $fpath)
+
 # Carregar configurações locais
 if [ -d "$HOME/.zsh.local" ]; then
     source "$HOME/.zsh.local"
