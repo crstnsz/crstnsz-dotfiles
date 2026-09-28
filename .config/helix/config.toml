@@ -1,0 +1,5 @@
+﻿theme = "jetbrains_dark"
+
+[editor]
+line-number = "relative"
+mouse = true

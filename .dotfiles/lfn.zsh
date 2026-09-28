@@ -1,5 +1,5 @@
 function lfn() {
-    autoload -Uz $1
+    source ~/.dotfiles/functions/$1.zsh
 }
 
 function lfnls() {
