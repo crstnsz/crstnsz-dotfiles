@@ -63,4 +63,4 @@ if [[ -n "$DOTNET_TOOLS" ]]; then
 fi
 
 # Added by Antigravity CLI installer
-export PATH="/home/crstnsz/.local/bin:$PATH"
+export PATH="~/bin:/home/crstnsz/.local/bin:$PATH"
